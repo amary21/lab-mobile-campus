@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,7 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.forminput.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
-//    private EditText edtNama;
+        // penggunaan findViewById
+//    private EditText edtNama, edtTangalLahir;
 //    private Button btnPesan;
 //
 //    @Override
@@ -21,16 +23,22 @@ public class MainActivity extends AppCompatActivity {
 //        setContentView(R.layout.activity_main);
 //
 //        edtNama = findViewById(R.id.edt_nama);
+//        edtTangalLahir = findViewById(R.id.edt_tanggal_lahir);
 //        btnPesan = findViewById(R.id.btn_pesan);
 //
 //        btnPesan.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
-//                Log.d("pemesanan", edtNama.getText().toString());
+//                String nama = edtNama.getText().toString();
+//                String tglLahir = edtTangalLahir.getText().toString();
+//
+//                Log.d("LogMainActivity", "btnPesanClick -> " + nama + " " + tglLahir);
+//                Toast.makeText(MainActivity.this, nama + " " + tglLahir, Toast.LENGTH_SHORT).show();
 //            }
 //        });
 //    }
 
+    // penggunaan viewBinding
     private ActivityMainBinding binding;
 
     @Override
@@ -42,7 +50,12 @@ public class MainActivity extends AppCompatActivity {
         binding.btnPesan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("pemesanan", binding.edtNama.getText().toString());
+
+                String nama = binding.edtNama.getText().toString();
+                String tglLahir = binding.edtTanggalLahir.getText().toString();
+
+                Log.d("LogMainActivity", "btnPesanClick -> " + nama + " " + tglLahir);
+                Toast.makeText(MainActivity.this, nama + " " + tglLahir, Toast.LENGTH_SHORT).show();
             }
         });
     }
