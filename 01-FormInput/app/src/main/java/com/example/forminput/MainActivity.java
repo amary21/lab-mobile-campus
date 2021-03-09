@@ -3,8 +3,6 @@ package com.example.forminput;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -13,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.forminput.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
-        // penggunaan findViewById
+/**penggunaan findViewById*/
 //    private EditText edtNama, edtTangalLahir;
 //    private Button btnPesan;
 //
@@ -38,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 //        });
 //    }
 
-    // penggunaan viewBinding
+    /**penggunaan viewBinding*/
     private ActivityMainBinding binding;
 
     @Override
@@ -50,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
         binding.btnPesan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 String nama = binding.edtNama.getText().toString();
                 String tglLahir = binding.edtTanggalLahir.getText().toString();
 
