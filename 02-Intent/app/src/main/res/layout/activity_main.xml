@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/tes"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/whiteTrans"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:id="@+id/txt_banner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-Pemesanan Paket Wisata-"
+                    style="@style/TextHeading1"/>
+
+                <Button
+                    android:id="@+id/btn_banner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_banner"
+                    android:layout_centerHorizontal="true"
+                    style="@style/ButtonStyle"
+                    android:text="Kuy Wisata"/>
+
+            </RelativeLayout>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/edt_nama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Nama"/>
+
+            <EditText
+                android:id="@+id/edt_tanggal_lahir"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Tanggal Lahir"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Jenis Kelamin"
+                style="@style/TextHeading2"/>
+
+            <RadioGroup
+                android:id="@+id/rg_gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rb_laki"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Laki-laki"/>
+
+                <RadioButton
+                    android:id="@+id/rb_perempuan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Perempuan"/>
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pilih paket"
+                style="@style/TextHeading2"/>
+
+            <Spinner
+                android:id="@+id/sp_paket"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:entries="@array/pilih_paket"
+                android:spinnerMode="dropdown"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Paket Tambahan"
+                style="@style/TextHeading2"/>
+
+            <CheckBox
+                android:id="@+id/cb_perjalanan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Perjalanan"/>
+
+            <CheckBox
+                android:id="@+id/cb_makan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Makan"/>
+
+            <CheckBox
+                android:id="@+id/cb_minum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Minum"/>
+
+            <EditText
+                android:id="@+id/ed_pickup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="Waktu Pick Up"/>
+
+            <Button
+                android:id="@+id/btn_pesan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Pesan"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
