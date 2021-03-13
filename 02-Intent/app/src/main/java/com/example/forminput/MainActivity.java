@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                         new DatePickerDialog.OnDateSetListener() {
                             @Override
                             public void onDateSet(DatePicker view, int year, int month, int day) {
-                                binding.edtTanggalLahir.setText(day + "-" + month + "-" + year);
+                                binding.edtTanggalLahir.setText(day + "-" + (month+1) + "-" + year);
                             }
                         }, tahun, bulan, hari);
                 datePickerDialog.show();
