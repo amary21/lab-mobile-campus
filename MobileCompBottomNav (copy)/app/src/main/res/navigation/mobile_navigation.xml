@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/fragment1">
+
+    <fragment
+        android:id="@+id/fragment1"
+        android:name="com.example.mobilecompbottomnav.ui.fragment1.Fragment1"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment1_fragment" >
+        <action
+            android:id="@+id/action_fragment1_to_fragment4"
+            app:destination="@id/fragment4" />
+        <action
+            android:id="@+id/action_fragment1_to_detailActivity"
+            app:destination="@id/detailActivity" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment2"
+        android:name="com.example.mobilecompbottomnav.ui.fragment2.Fragment2"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment2_fragment" />
+
+    <fragment
+        android:id="@+id/fragment3"
+        android:name="com.example.mobilecompbottomnav.ui.fragment3.Fragment3"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment3_fragment" />
+    <fragment
+        android:id="@+id/fragment4"
+        android:name="com.example.mobilecompbottomnav.ui.fragmet4.Fragment4"
+        android:label="fragment_4"
+        tools:layout="@layout/fragment_4" />
+    <activity
+        android:id="@+id/detailActivity"
+        android:name="com.example.mobilecompbottomnav.ui.activity.DetailActivity"
+        android:label="activity_detail"
+        tools:layout="@layout/activity_detail" />
+
+</navigation>

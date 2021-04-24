@@ -52,6 +52,7 @@ public class DataList implements Parcelable {
         this.price = price;
     }
 
+
     protected DataList(Parcel in) {
         imageId = in.readInt();
         title = in.readString();
