@@ -11,11 +11,11 @@
         android:label="@string/title_home"
         tools:layout="@layout/fragment1_fragment" >
         <action
-            android:id="@+id/action_fragment1_to_fragment4"
-            app:destination="@id/fragment4" />
-        <action
             android:id="@+id/action_fragment1_to_detailActivity"
             app:destination="@id/detailActivity" />
+        <action
+            android:id="@+id/action_fragment1_to_fragmentDetail"
+            app:destination="@id/fragmentDetail" />
     </fragment>
 
     <fragment
@@ -29,15 +29,19 @@
         android:name="com.example.mobilecompbottomnav.ui.fragment3.Fragment3"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment3_fragment" />
-    <fragment
-        android:id="@+id/fragment4"
-        android:name="com.example.mobilecompbottomnav.ui.fragmet4.Fragment4"
-        android:label="fragment_4"
-        tools:layout="@layout/fragment_4" />
     <activity
         android:id="@+id/detailActivity"
-        android:name="com.example.mobilecompbottomnav.ui.activity.DetailActivity"
+        android:name="com.example.mobilecompbottomnav.ui.detail.DetailActivity"
         android:label="activity_detail"
-        tools:layout="@layout/activity_detail" />
+        tools:layout="@layout/activity_detail">
+        <deepLink
+            android:id="@+id/deepLink2"
+            app:uri="https://www.compmobile.com/detail" />
+    </activity>
+    <fragment
+        android:id="@+id/fragmentDetail"
+        android:name="com.example.mobilecompbottomnav.ui.detail.FragmentDetail"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" />
 
 </navigation>

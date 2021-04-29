@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -15,11 +14,12 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
 import com.example.mobilecompbottomnav.R;
 import com.example.mobilecompbottomnav.databinding.Fragment1FragmentBinding;
-import com.example.mobilecompbottomnav.ui.activity.DetailActivity;
-import com.example.mobilecompbottomnav.ui.fragmet4.Fragment4;
+import com.example.mobilecompbottomnav.ui.detail.DetailActivity;
+import com.example.mobilecompbottomnav.ui.detail.FragmentDetail;
 
 public class Fragment1 extends Fragment {
 
@@ -35,8 +35,11 @@ public class Fragment1 extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        /**VIEW MODEL**/
+        //inisialisasi viewmodel di dalam fragment
         fragment1ViewModel = new ViewModelProvider(this).get(Fragment1ViewModel.class);
 
+        //implementasi observer viewmodel untuk mengambil data
         fragment1ViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
@@ -44,6 +47,7 @@ public class Fragment1 extends Fragment {
             }
         });
 
+        //implementasi untuk memasukkan data ke dalam viewmodel
         binding.fragment1ButtonMessage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,10 +56,13 @@ public class Fragment1 extends Fragment {
             }
         });
 
+
+        /**TRANSACTION FRAGMENT TO FRAGMENT & FRAGMENT TO ACTIVITY**/
+        //transaksi fragment to fragment tanpa komponen navigasi
         binding.btnToFragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment4 fragment4 = new Fragment4();
+                FragmentDetail fragment4 = new FragmentDetail();
 
                 Bundle mBundle = new Bundle();
                 mBundle.putString("key_fragment", "Data dengan fragment");
@@ -64,11 +71,12 @@ public class Fragment1 extends Fragment {
 
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.activity_main_nav_host_fragment, fragment4, Fragment4.class.getSimpleName());
+                fragmentTransaction.replace(R.id.activity_main_nav_host_fragment, fragment4, FragmentDetail.class.getSimpleName());
                 fragmentTransaction.commit();
             }
         });
 
+        //transaksi fragment to activity tanpa komponen navigasi
         binding.btnToActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,5 +85,27 @@ public class Fragment1 extends Fragment {
                 startActivity(intent);
             }
         });
+
+        //transaksi fragment to fragment dengan komponen navigasi
+        binding.btnToFragmentNav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle mBundle = new Bundle();
+                mBundle.putString("key_fragment", "Data dengan fragment");
+                Navigation.findNavController(v).navigate(R.id.action_fragment1_to_fragmentDetail, mBundle);//R.id.action_fragment1_to_fragmentDetail didapat dari res->navigation->mobile_navigation.xml
+            }
+        });
+
+        //transaksi fragment to activity dengan komponen navigasi
+        binding.btnToActivityNav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle mBundle = new Bundle();
+                mBundle.putString("key_activity", "Data dengan activity");
+                Navigation.findNavController(v).navigate(R.id.action_fragment1_to_detailActivity, mBundle);//R.id.action_fragment1_to_detailActivity didapat dari res->navigation->mobile_navigation.xml
+            }
+        });
+
+
     }
 }

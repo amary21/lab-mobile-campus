@@ -1,54 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:id="@+id/fragment_home"
-    tools:context=".ui.fragment1.Fragment1">
+    android:id="@+id/fragment_home">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="message"
-        android:id="@+id/fragment1_ed_message"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="show message"
-        android:id="@+id/fragment1_button_message"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="to fragment"
-        android:id="@+id/btn_to_fragment"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="To Activity"
-        android:id="@+id/btn_to_activity"/>
-
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="to fragment with nav"
-        android:id="@+id/btn_to_fragment_nav"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="To Activity with nav"
-        android:id="@+id/btn_to_activity_nav"/>
-
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="FRAGMENT 1"
-        android:gravity="center"
-        android:id="@+id/fragment1_text_message"/>
-</LinearLayout>
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="message"
+            android:id="@+id/fragment1_ed_message"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="show message"
+            android:id="@+id/fragment1_button_message"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="to fragment"
+            android:id="@+id/btn_to_fragment"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="To Activity"
+            android:id="@+id/btn_to_activity"/>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="to fragment with nav"
+            android:id="@+id/btn_to_fragment_nav"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="To Activity with nav"
+            android:id="@+id/btn_to_activity_nav"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="FRAGMENT 1"
+            android:gravity="center"
+            android:layout_margin="32dp"
+            android:id="@+id/fragment1_text_message"/>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

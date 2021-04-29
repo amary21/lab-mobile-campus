@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activity.DetailActivity">
+    tools:context=".ui.detail.DetailActivity">
 
     <TextView
         android:id="@+id/tv_act_detail"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         android:text="test"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

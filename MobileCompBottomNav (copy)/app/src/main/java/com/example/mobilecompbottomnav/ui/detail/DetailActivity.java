@@ -1,4 +1,4 @@
-package com.example.mobilecompbottomnav.ui.activity;
+package com.example.mobilecompbottomnav.ui.detail;
 
 import androidx.appcompat.app.AppCompatActivity;
 

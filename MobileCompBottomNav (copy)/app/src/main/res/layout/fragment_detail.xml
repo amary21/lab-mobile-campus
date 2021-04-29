@@ -3,12 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragmet4.Fragment4">
+    tools:context=".ui.detail.FragmentDetail">
 
     <TextView
         android:id="@+id/tv_detail"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         android:text="@string/hello_blank_fragment" />
 
 </FrameLayout>
