@@ -100,9 +100,9 @@ public class Fragment1 extends Fragment {
         binding.btnToActivityNav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bundle mBundle = new Bundle();
-                mBundle.putString("key_activity", "Data dengan activity");
-                Navigation.findNavController(v).navigate(R.id.action_fragment1_to_detailActivity, mBundle);//R.id.action_fragment1_to_detailActivity didapat dari res->navigation->mobile_navigation.xml
+                Fragment1Directions.ActionFragment1ToDetailActivity actionFragment1ToDetailActivity = Fragment1Directions.actionFragment1ToDetailActivity();
+                actionFragment1ToDetailActivity.setName("uty");
+                Navigation.findNavController(v).navigate(actionFragment1ToDetailActivity);//R.id.action_fragment1_to_detailActivity didapat dari res->navigation->mobile_navigation.xml
             }
         });
 

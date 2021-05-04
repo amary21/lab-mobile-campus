@@ -36,7 +36,12 @@
         tools:layout="@layout/activity_detail">
         <deepLink
             android:id="@+id/deepLink2"
-            app:uri="https://www.compmobile.com/detail" />
+            app:uri="https://www.compmobile.com/detail/?name={name}" />
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue="null"
+            app:nullable="true" />
     </activity>
     <fragment
         android:id="@+id/fragmentDetail"
