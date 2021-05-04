@@ -10,7 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MobileCompBottomNav">
         <activity android:name=".ui.detail.DetailActivity">
-            <nav-graph android:value="@navigation/mobile_navigation"/>
         </activity>
         <activity
             android:name=".MainActivity"
@@ -20,6 +19,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <nav-graph android:value="@navigation/mobile_navigation"/>
         </activity>
     </application>
 

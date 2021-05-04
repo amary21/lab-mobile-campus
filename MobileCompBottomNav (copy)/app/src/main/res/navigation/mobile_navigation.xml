@@ -36,7 +36,7 @@
         tools:layout="@layout/activity_detail">
         <deepLink
             android:id="@+id/deepLink2"
-            app:uri="https://www.compmobile.com/detail/?name={name}" />
+            app:uri="https://www.compmobile.com/detail/{name}" />
         <argument
             android:name="name"
             app:argType="string"
