@@ -90,9 +90,9 @@ public class Fragment1 extends Fragment {
         binding.btnToFragmentNav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bundle mBundle = new Bundle();
-                mBundle.putString("key_fragment", "Data dengan fragment");
-                Navigation.findNavController(v).navigate(R.id.action_fragment1_to_fragmentDetail, mBundle);//R.id.action_fragment1_to_fragmentDetail didapat dari res->navigation->mobile_navigation.xml
+                Fragment1Directions.ActionFragment1ToFragmentDetail actionFragment1ToFragmentDetail = Fragment1Directions.actionFragment1ToFragmentDetail();
+                actionFragment1ToFragmentDetail.setKeyMessage("uty");
+                Navigation.findNavController(v).navigate(actionFragment1ToFragmentDetail);//R.id.action_fragment1_to_fragmentDetail didapat dari res->navigation->mobile_navigation.xml
             }
         });
 

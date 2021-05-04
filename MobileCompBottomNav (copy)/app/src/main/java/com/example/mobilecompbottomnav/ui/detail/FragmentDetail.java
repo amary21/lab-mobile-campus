@@ -28,7 +28,7 @@ public class FragmentDetail extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         if (getArguments() != null) {
-            String text = getArguments().getString("key_fragment");
+            String text = FragmentDetailArgs.fromBundle(getArguments()).getKeyMessage();
             binding.tvDetail.setText(text);
         }
     }
